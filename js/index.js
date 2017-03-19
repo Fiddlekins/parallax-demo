@@ -12,7 +12,7 @@ var parallax_demo = parallax_demo || {};
 	canvas.height = window.innerHeight;
 
 	var HORIZON_Y = canvas.height * 0.7;
-	var SCROLL_SPEED = 1/5;
+	var SCROLL_SPEED = 1 / 5;
 	var PEBBLE_COUNT = 2000;
 
 	var background = new parallax_demo.Background(canvas);
@@ -47,6 +47,10 @@ var parallax_demo = parallax_demo || {};
 		pebbles.forEach(function (pebble) {
 			pebble.draw(ctx);
 		});
+	};
+
+	window.onfocus = function () {
+		lastTimestamp = Date.now();
 	};
 
 	var start = function () {
